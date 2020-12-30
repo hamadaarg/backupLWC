@@ -1,0 +1,15 @@
+<template>
+    <template if:true={boat}>
+        <lightning-tabset>
+            <lightning-tab label="Details">
+                <c-boat-detail-lwc boat={boat}></c-boat-detail-lwc>
+            </lightning-tab>
+            <lightning-tab label="Reviews">
+                <c-boat-reviews-lwc boat-id={boat.id}></c-boat-reviews-lwc>
+            </lightning-tab>
+            <lightning-tab label="Add Review">
+                <c-add-boat-review-lwc onreviewadded={handleReviewAdded} boat={boat}></c-add-boat-review-lwc>
+            </lightning-tab>
+        </lightning-tabset>
+    </template>
+</template>

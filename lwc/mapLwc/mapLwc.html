@@ -1,0 +1,9 @@
+<template>
+    <template if:true={mapMarkers}>
+        <lightning-card title="Current Boat Location">
+            <div style="height:200px; width:100%;">
+                <lightning-map map-markers={mapMarkers} show-footer zoom-level="18"></lightning-map>
+            </div>
+        </lightning-card>
+    </template>
+</template>

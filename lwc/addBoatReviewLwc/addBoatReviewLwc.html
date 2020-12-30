@@ -1,0 +1,20 @@
+<template>
+    <lightning-layout vertical-align="stretch" multiple-rows="true">
+        <lightning-layout-item size="12" padding="around-small">
+            <lightning-input label="Title:" onchange={handleTitleChange}></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="12" padding="around-small">
+            <p>Description:</p>
+            <lightning-input-rich-text title="Description" onchange={handleCommentChange}
+                disabled-categories="FORMAT_FONT">
+            </lightning-input-rich-text>
+        </lightning-layout-item>
+        <lightning-layout-item size="12" padding="around-small">
+            <p>Rating:</p>
+            <c-five-star-rating-lwc onratingchange={handleRatingChange}></c-five-star-rating-lwc>
+        </lightning-layout-item>
+        <div class="slds-align--absolute-center">
+            <lightning-button label="Submit" icon-name="utility:save" onclick={handleOnSubmit}></lightning-button>
+        </div>
+    </lightning-layout>
+</template>

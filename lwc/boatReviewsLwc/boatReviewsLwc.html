@@ -1,0 +1,42 @@
+<template>
+    <template if:true={hasReviews}>
+        <div class="slds-feed slds-scrollable scrollerSize">
+            <ul class="slds-feed__list" >
+                <template for:each={boatReviews} for:item="review">
+                    <li key={review.Id} class="slds-feed__item">
+                        <article class="slds-post">
+                            <header class="slds-post__header slds-media">
+                                <div class="slds-media__figure">
+                                    <a href="" class="slds-avatar slds-avatar_circle slds-avatar_large">
+                                        <img alt={review.CreatedBy.Name} src={review.CreatedBy.SmallPhotoUrl} title={review.avatarName}/>
+                                    </a>
+                                </div>
+                                <div class="slds-media__body">
+                                    <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                                        <p>
+                                            <a href="javascript:void(0);" onclick={handleuserInfoClick} data-userid={review.CreatedBy.Id} title={review.CreatedBy.Name}>{review.CreatedBy.Name}</a> —
+                                            <a title={review.CreatedBy.CompanyName}>{review.CreatedBy.CompanyName}</a>
+                                        </p>
+                                    </div>
+                                    <div class="slds-text-body_small">
+                                        <p class="slds-text-link_reset">{review.CreatedDate}</p>
+                                    </div>
+                                </div>
+                            </header>
+                            <div class="slds-post__content slds-text-longform" style="margin-bottom: 0rem;">
+                                <p class="slds-text-title_caps">{review.Name}</p>
+                                <lightning-formatted-rich-text value={review.Comment__c}></lightning-formatted-rich-text>
+                            </div>
+                            <c-five-star-rating-lwc showonly rating={review.Rating__c}></c-five-star-rating-lwc>
+                        </article>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </template>
+    <template if:false={hasReviews}>
+        <div class="slds-align_absolute-center slds-text-heading_medium">
+            No Reviews Available
+        </div>
+    </template>
+</template>

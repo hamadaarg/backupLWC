@@ -1,0 +1,15 @@
+<template>
+    <button class={tileClass} onclick={handleOnClick}>
+        <div style={backgroundImage} class="innertile">
+            <div class="lower-third">
+                <h1 class="slds-truncate">{boat.Contact__r.Name}</h1>
+            </div>
+        </div>
+    </button>
+</template>
+
+<!--
+    if I use here lightning button, nesting it into div with style and innertile class,
+    I'll face strange behavior, which I can't explain now.
+    I suppose, the thing is about shadow dom and lwc styling, need to investigate
+-->

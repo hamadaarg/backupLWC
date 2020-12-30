@@ -1,0 +1,10 @@
+<template>
+    <div class="slds-m-bottom--small">
+        <lightning-card title="Find A Boat">
+            <c-boat-search-form-lwc ontypeselect={handleTypeSelect}></c-boat-search-form-lwc>
+        </lightning-card>
+    </div>
+    <lightning-card title="Matching Boats">
+        <c-boat-search-results-lwc boat-type-id={boatTypeId}></c-boat-search-results-lwc>
+    </lightning-card>
+</template>

@@ -1,0 +1,19 @@
+<template>
+    <div class="c-container slds-m-right--large">
+        <lightning-layout horizontal-align="center">
+            <lightning-layout-item padding="around-small">
+                <div class="slds-align--absolute-center">
+                    <select onchange={handleOnChange} class="slds-select">
+                        <option value="">All Types</option>
+                        <template for:each={boatTypes} for:item="type">
+                            <option key={type.value} value={type.value}>{type.label}</option>
+                        </template>
+                    </select>
+                    <div class="slds-m-left--small" style="width:100%">
+                        <lightning-button label="Add Boat" onclick={addBoat} variant="brand"></lightning-button>
+                    </div>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

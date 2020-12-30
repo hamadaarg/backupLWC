@@ -1,0 +1,16 @@
+<template>
+    <lightning-layout multiple-rows="true">
+        <template if:true={boats}>
+            <template for:each={boats} for:item="boat">
+                <lightning-layout-item key={boat.Id} size="3" padding="around-small">
+                    <c-boat-tile-lwc onboatselect={handleOnBoatSelect} boat={boat} selected={selectedId}></c-boat-tile-lwc>
+                </lightning-layout-item>
+            </template>
+        </template>
+        <template if:false={boats}>
+            <div class="slds-align_absolute-center slds-text-heading_medium">
+                No boats found
+            </div>
+        </template>
+    </lightning-layout>
+</template>
